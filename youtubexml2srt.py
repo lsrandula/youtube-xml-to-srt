@@ -17,6 +17,7 @@ for para in paras:
         if child.nodeName == 'br':
             out.write("\n")
         elif child.nodeName == '#text':
-            out.write(unicode(child.data).encode('utf=8'))
+            #print(child.data)
+            out.write(str(child.data.encode('utf=8'))) # changed from original
     out.write("\n\n")
     i += 1
