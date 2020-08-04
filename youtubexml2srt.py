@@ -3,6 +3,14 @@
 from xml.dom.minidom import parse
 import datetime
 import sys
+import requests
+print("....For English Auto-Generated From Turkish....")
+video_id= input("Enter Video ID:")
+url= "https://www.youtube.com/api/timedtext?lang=tr&tlang=en&v="+video_id
+r= requests.get(url,allow_redirects= True)
+open('test.xml', 'wb').write(r.content)
+
+
 i=1
 dom = parse(sys.argv[1])
 out = open(sys.argv[2], 'w')
