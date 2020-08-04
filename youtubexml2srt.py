@@ -18,6 +18,11 @@ for para in paras:
             out.write("\n")
         elif child.nodeName == '#text':
             #print(child.data)
-            out.write(str(child.data.encode('utf=8'))) # changed from original
-    out.write("\n\n")
-    i += 1
+            string= str(child.data.encode('utf-8'))  #for youtube auto-generated english subs
+            new_string1= string.replace("&quot;","")
+            new_string2= new_string1.replace("b' ","")
+            new_string3= new_string2.replace(" '","")
+            
+            out.write(new_string3) # changed from original
+        out.write("\n\n")
+        i += 1
